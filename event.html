@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique Cafe</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link rel="stylesheet" href="./Css/event.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Bean Boutique</div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="event.html">Event</a>
+    <a href="about.html">About Us</a>
+    <a href="offer.html">Special Offer</a>
+    <a href="cart.html">Cart</a>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="event.html">Event</a>
+  <a href="about.html">About Us</a>
+  <a href="offer.html">Special Offer</a>
+  <a href="cart.html">Cart</a>
+</div>
+
+  <!-- Modal Registration Form -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <form id="registerForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY_HERE"></div>
+        <div class="modal-buttons">
+          <button type="submit" class="submit-btn">Submit</button>
+          <button type="button" class="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<section class="event-section">
+    <h2>Upcoming Events</h2>
+    <div class="event-card">
+      <img src="./image/Coffee Tasting.jpg" alt="Coffee Tasting">
+      <div class="event-card-content">
+        <h3>Coffee Tasting Experience</h3>
+        <p>Join us for a delightful coffee tasting session where you'll discover the best beans, brewing techniques, and flavors.</p>
+        <p class="date">Date: June 15, 2025</p>
+        <button class="register-btn">Register Now</button>
+      </div>
+    </div>
+    <!-- Latte Art Showcase -->
+  <div class="event-card">
+    <img src="./image/Latte Art Showcase.avif" alt="Latte Art Showcase">
+    <div class="event-card-content">
+      <h3>Latte Art Showcase</h3>
+      <p>Marvel at stunning latte designs and vote for your favorite as skilled baristas show off their creativity!</p>
+      <p class="date">Date: July 20, 2025</p>
+      <button class="register-btn">Register Now</button>
+    </div>
+  </div>
+
+  <!-- Coffee & Poetry Night -->
+  <div class="event-card">
+    <img src="./image/Coffee and Poetry.webp" alt="Coffee and Poetry">
+    <div class="event-card-content">
+      <h3>Coffee & Poetry Night</h3>
+      <p>Experience a soulful evening with poetic performances, open mic sessions, and warm cups of coffee.</p>
+      <p class="date">Date: July 25, 2025</p>
+      <button class="register-btn">Register Now</button>
+    </div>
+  </div>
+
+  <!-- Cold Brew Launch Party -->
+  <div class="event-card">
+    <img src="./image/Cold Brew Launch.avif" alt="Cold Brew Launch">
+    <div class="event-card-content">
+      <h3>Cold Brew Launch Party</h3>
+      <p>Celebrate our latest cold brew release with free tastings, music, and giveaways!</p>
+      <p class="date">Date: August 1, 2025</p>
+      <button class="register-btn">Register Now</button>
+    </div>
+  </div>
+
+  <!-- Coffee History Talk -->
+  <div class="event-card">
+    <img src="./image/Coffee History Talk.jpg" alt="Coffee History Talk">
+    <div class="event-card-content">
+      <h3>History of Coffee Talk</h3>
+      <p>Join us for an educational evening exploring the global history and culture behind coffee.</p>
+      <p class="date">Date: August 7, 2025</p>
+      <button class="register-btn">Register Now</button>
+    </div>
+  </div>
+
+  <!-- Coffee-Themed Quiz Night -->
+  <div class="event-card">
+    <img src="image/Coffee Quiz Night.webp" alt="Coffee Quiz Night">
+    <div class="event-card-content">
+      <h3>Coffee-Themed Quiz Night</h3>
+      <p>Test your knowledge in a fun, coffee-centric quiz night with prizes and laughs.</p>
+      <p class="date">Date: August 14, 2025</p>
+      <button class="register-btn">Register Now</button>
+    </div>
+  </div>
+
+  <!-- Espresso Exploration Session -->
+  <div class="event-card">
+    <img src="./image/Espresso Exploration.jpg"Espresso Exploration">
+    <div class="event-card-content">
+      <h3>Espresso Exploration</h3>
+      <p>Dive into the world of espresso with tasting flights and expert brewing techniques.</p>
+      <p class="date">Date: August 22, 2025</p>
+      <button class="register-btn">Register Now</button>
+    </div>
+  </div>
+
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>Bean Boutique</h3>
+      <p>Your daily dose of caffeine and comfort.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="offer.html">Special Offer</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+   
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: info@beanboutique.com</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Location: 123 Brew St, Coffeeville</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Bean Boutique Cafe. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="./JS/Shop_cart.js"></script>
+</body>
+</html>

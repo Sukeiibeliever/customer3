@@ -1,0 +1,337 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bean Boutique Cafe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yG7Z7YXG+dW0c3aFZP/Nh8zFbHPw/4Gpab3H0k1smDp92V0gAvFnkl4Ay62TezqkQZcXrr/XsT42Id6uGlmv+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./Css/shop_cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+  <nav>
+    <div class="logo">Bean Boutique</div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="event.html">Event</a>
+      <a href="about.html">About Us</a>
+      <a href="offer.html">Special Offer</a>
+      <a href="cart.html">Cart (<span class="cart-count">0</span>)</a>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="event.html">Event</a>
+    <a href="about.html">About Us</a>
+    <a href="offer.html">Special Offer</a>
+    <a href="cart.html">Cart (<span class="cart-count">0</span>)</a>
+  </div>
+
+  <section class="search-bar">
+    <form onsubmit="event.preventDefault(); searchProducts();">
+      <input type="text" id="productSearch" placeholder="Search for products...">
+      <button type="submit">Search</button>
+    </form>
+  </section>
+
+  <section class="weather-recommendation">
+    <h2>Weather-Based Menu Recommendation</h2>
+    <p id="weather-description">Loading weather...</p>
+    <div id="recommended-menu">
+      <!-- Menu items will be inserted here dynamically -->
+    </div>
+  </section>
+  <section class="shop-section">
+    <h2>Coffee Selection</h2>
+    <div class="product-grid">
+      <!-- Product 1: Espresso -->
+      <div class="product-card">
+        <img src="./image/Espresso Roast.avif" alt="Espresso Roast" />
+        <h3>Espresso Roast</h3>
+        <p>Rich and bold. Perfect for espresso lovers.</p>
+        <p class="price">$12.99</p>
+        <button class="btn add-to-cart" 
+          data-name="Espresso Roast" 
+          data-desc="Rich and bold. Perfect for espresso lovers." 
+          data-img="./image/Espresso Roast.avif" 
+          data-price="12.99">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2: Drip Coffee -->
+      <div class="product-card">
+        <img src="./image/Drip Coffee Blend.webp" alt="Drip Coffee Blend" />
+        <h3>Drip Coffee Blend</h3>
+        <p>Smooth and aromatic. Great for mornings.</p>
+        <p class="price">$10.99</p>
+        <button class="btn add-to-cart" 
+          data-name="Drip Coffee Blend" 
+          data-desc="Smooth and aromatic. Great for mornings." 
+          data-img="./image/Drip Coffee Blend.webp" 
+          data-price="10.99">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3: House Blend -->
+      <div class="product-card">
+        <img src="./image/House Blend.jpg" alt="House Blend" />
+        <h3>House Blend</h3>
+        <p>Balanced flavor with a hint of chocolate and spice.</p>
+        <p class="price">$11.49</p>
+        <button class="btn add-to-cart" 
+          data-name="House Blend" 
+          data-desc="Balanced flavor with a hint of chocolate and spice." 
+          data-img="./image/House Blend.jpg" 
+          data-price="11.49">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4: Decaf Coffee -->
+      <div class="product-card">
+        <img src="./image/Decaf Coffee.jpg" alt="Decaf Coffee" />
+        <h3>Decaf Coffee</h3>
+        <p>All the flavor, none of the caffeine. Smooth and mellow.</p>
+        <p class="price">$11.99</p>
+        <button class="btn add-to-cart" 
+          data-name="Decaf Coffee" 
+          data-desc="All the flavor, none of the caffeine. Smooth and mellow." 
+          data-img="./image/Decaf Coffee.jpg" 
+          data-price="11.99">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 5: Single Origin Coffee -->
+      <div class="product-card">
+        <img src="./image/Single Origin Coffee.avif" alt="Single Origin Coffee" />
+        <h3>Single Origin Coffee</h3>
+        <p>Unique flavors from a specific region. A connoisseur’s choice.</p>
+        <p class="price">$14.49</p>
+        <button class="btn add-to-cart" 
+          data-name="Single Origin Coffee" 
+          data-desc="Unique flavors from a specific region. A connoisseur’s choice." 
+          data-img="./image/Single Origin Coffee.avif" 
+          data-price="14.49">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 6: Dark Roast -->
+      <div class="product-card">
+        <img src="./image/Dark Roast.webp" alt="Dark Roast" />
+        <h3>Dark Roast</h3>
+        <p>Intense and smoky, perfect for bold flavor seekers.</p>
+        <p class="price">$12.49</p>
+        <button class="btn add-to-cart" 
+          data-name="Dark Roast" 
+          data-desc="Intense and smoky, perfect for bold flavor seekers." 
+          data-img="./image/Dark Roast.webp" 
+          data-price="12.49">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="shop-section">
+    <h2>Brewing Equipment</h2>
+    <div class="product-grid">
+      <!-- Product 1: French Press -->
+      <div class="product-card">
+        <img src="./image/French Press.jpg" alt="French Press" />
+        <h3>French Press</h3>
+        <p>Classic brewing style for full-bodied coffee.</p>
+        <p class="price">$24.99</p>
+        <button class="btn add-to-cart"
+          data-name="French Press" 
+          data-desc="Classic brewing style for full-bodied coffee." 
+          data-img="./image/French Press.jpg" 
+          data-price="24.99">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2: AeroPress -->
+      <div class="product-card">
+        <img src="./image/AeroPress.jpg" alt="AeroPress" />
+        <h3>AeroPress</h3>
+        <p>Portable and quick. Ideal for coffee on the go.</p>
+        <p class="price">$29.99</p>
+        <button class="btn add-to-cart"
+          data-name="AeroPress" 
+          data-desc="Portable and quick. Ideal for coffee on the go." 
+          data-img="./image/AeroPress.jpg" 
+          data-price="29.99">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3: Coffee Grinder -->
+      <div class="product-card">
+        <img src="./image/Coffee Grinder.jpg" alt="Coffee Grinder" />
+        <h3>Coffee Grinder</h3>
+        <p>Grind your coffee beans fresh for the perfect cup.</p>
+        <p class="price">$34.99</p>
+        <button class="btn add-to-cart"
+          data-name="Coffee Grinder" 
+          data-desc="Grind your coffee beans fresh for the perfect cup." 
+          data-img="./image/Coffee Grinder.jpg" 
+          data-price="34.99">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4: Coffee Maker -->
+      <div class="product-card">
+        <img src="./image/Coffee Maker.jpg" alt="Coffee Maker" />
+        <h3>Coffee Maker</h3>
+        <p>Ideal for brewing multiple cups at once.</p>
+        <p class="price">$59.99</p>
+        <button class="btn add-to-cart"
+          data-name="Coffee Maker" 
+          data-desc="Ideal for brewing multiple cups at once." 
+          data-img="./image/Coffee Maker.jpg" 
+          data-price="59.99">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 5: Espresso Machine -->
+      <div class="product-card">
+        <img src="./image/Espresso Machine.jpg" alt="Espresso Machine" />
+        <h3>Espresso Machine</h3>
+        <p>High-quality espresso brewing, perfect for home baristas.</p>
+        <p class="price">$199.99</p>
+        <button class="btn add-to-cart"
+          data-name="Espresso Machine" 
+          data-desc="High-quality espresso brewing, perfect for home baristas." 
+          data-img="./image/Espresso Machine.jpg" 
+          data-price="199.99">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 6: Coffee Dripper -->
+      <div class="product-card">
+        <img src="./image/Coffee Dripper.jpg" alt="Coffee Dripper" />
+        <h3>Coffee Dripper</h3>
+        <p>Precision brewing for filter coffee enthusiasts.</p>
+        <p class="price">$19.99</p>
+        <button class="btn add-to-cart"
+          data-name="Coffee Dripper" 
+          data-desc="Precision brewing for filter coffee enthusiasts." 
+          data-img="./image/Coffee Dripper.jpg" 
+          data-price="19.99">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-section">
+    <h2>Recommended Menu</h2>
+    <div class="product-grid">
+      <!-- Product 1: Iced Latte -->
+      <div class="product-card">
+        <img src="./image/Iced Latte.jpg" alt="Iced Latte" />
+        <h3>Iced Latte</h3>
+        <p>Cool and creamy coffee drink for warm days.</p>
+        <p class="price">$4.99</p>
+        <button class="btn add-to-cart"
+          data-name="Iced Latte" 
+          data-desc="Cool and creamy coffee drink for warm days." 
+          data-img="./image/Iced Latte.jpg" 
+          data-price="4.99">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 2: Hot Mocha -->
+      <div class="product-card">
+        <img src="./image/Hot Mocha.jpg" alt="Hot Mocha" />
+        <h3>Hot Mocha</h3>
+        <p>Chocolatey goodness with a coffee twist.</p>
+        <p class="price">$5.49</p>
+        <button class="btn add-to-cart"
+          data-name="Hot Mocha" 
+          data-desc="Chocolatey goodness with a coffee twist." 
+          data-img="./image/Hot Mocha.jpg" 
+          data-price="5.49">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 3: Cold Brew -->
+      <div class="product-card">
+        <img src="./image/Cold Brew.jpg" alt="Cold Brew" />
+        <h3>Cold Brew</h3>
+        <p>Rich and smooth cold coffee brewed for 12 hours.</p>
+        <p class="price">$6.49</p>
+        <button class="btn add-to-cart"
+          data-name="Cold Brew" 
+          data-desc="Rich and smooth cold coffee brewed for 12 hours." 
+          data-img="./image/Cold Brew.jpg" 
+          data-price="6.49">
+          Add to Cart
+        </button>
+      </div>
+
+      <!-- Product 4: Chai Latte -->
+      <div class="product-card">
+        <img src="./image/Chai Latte.webp" alt="Chai Latte" />
+        <h3>Chai Latte</h3>
+        <p>A spicy and aromatic tea-based drink.</p>
+        <p class="price">$4.79</p>
+        <button class="btn add-to-cart"
+          data-name="Chai Latte" 
+          data-desc="A spicy and aromatic tea-based drink." 
+          data-img="./image/Chai Latte.webp" 
+          data-price="4.79">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h4>Bean Boutique Cafe</h4>
+        <p>Serving joy in every cup. Visit us for premium coffee, expert brewing tools, and cozy moments.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="event.html">Event</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="offer.html">Special Offer</a></li>
+          <li><a href="cart.html">Cart</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: hello@beanboutique.com</p>
+        <p>Phone: +123 456 7890</p>
+        <p>Location: 123 Coffee Lane, Roast City</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Bean Boutique Cafe. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="./JS/Shop_cart.js"></script>
+  </body>
+  </html>

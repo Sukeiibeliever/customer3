@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique Cafe</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yG7Z7YXG+dW0c3aFZP/Nh8zFbHPw/4Gpab3H0k1smDp92V0gAvFnkl4Ay62TezqkQZcXrr/XsT42Id6uGlmv+w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./Css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+<nav>
+  <div class="logo">Bean Boutique</div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="event.html">Event</a>
+    <a href="about.html">About Us</a>
+    <a href="offer.html">Special Offer</a>
+    <a href="cart.html">Cart</a>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="event.html">Event</a>
+  <a href="about.html">About Us</a>
+  <a href="offer.html">Special Offer</a>
+  <a href="cart.html">Cart</a>
+</div>
+
+<!-- Modal -->
+<div class="auth-container" id="authContainer">
+  <div class="auth-box">
+    <!-- Tabs -->
+    <div class="tab-buttons">
+      <button id="loginTab" class="active" onclick="switchTab('login')">Login</button>
+      <button id="signupTab" onclick="switchTab('signup')">Sign Up</button>
+    </div>
+
+    <!-- Login Form -->
+    <form class="auth-form active" id="loginForm">
+      <input type="text" placeholder="Username" required />
+      <input type="password" placeholder="Password" required />
+      <button class="submit-btn" type="submit">Login</button>
+    </form>
+
+    <!-- Sign Up Form -->
+    <form class="auth-form" id="signupForm">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="text" placeholder="Username" required />
+      <input type="password" placeholder="Password" required />
+      <button class="submit-btn" type="submit">Sign Up</button>
+    </form>
+
+    <!-- Close Button -->
+    <button class="close-btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+
+<section class="welcome-slider">
+  <div class="slider-wrapper">
+    <div class="slide">
+      <div class="welcome-container">
+        <div class="welcome-image">
+          <img src="./image/homephoto.webp" alt="Cafe View" />
+        </div>
+        <div class="welcome-text">
+          <h1>Welcome to Bean Boutique</h1>
+          <p>We blend comfort, creativity, and coffee into one cozy experience.</p>
+          <a href="shop.html" class="shop-btn">Explore Our Shop</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="welcome-container">
+        <div class="welcome-image">
+          <img src="./image/homephoto2.jpg" alt="Barista Art" />
+        </div>
+        <div class="welcome-text">
+          <h1>Art in Every Cup</h1>
+          <p>Enjoy handcrafted coffee by our expert baristas with a personal touch.</p>
+          <a href="shop.html" class="shop-btn">Shop Barista Picks</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="welcome-container">
+        <div class="welcome-image">
+          <img src="./image/homephoto3.jpg" alt="Cafe Ambience" />
+        </div>
+        <div class="welcome-text">
+          <h1>Your Favorite Hangout</h1>
+          <p>Join our community, grab your favorite drink, and stay a while.</p>
+          <a href="shop.html" class="shop-btn">Visit Today</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dots -->
+  <div class="slider-dots">
+    <span class="dot active-dot" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+  </div>
+</section>
+<!-- Featured Section -->
+<section class="featured">
+  <h2>Featured Items</h2>
+  <div class="featured-items">
+    <div class="item-card">
+      <img src="./image/Signature Latte.jpg" alt="Signature Latte" class="item-image">
+      <div class="item-info">
+        <h3>Signature Latte</h3>
+        <p>Smooth, creamy, and topped with our signature foam art.</p>
+      </div>
+    </div>
+    <div class="item-card">
+      <img src="./image/Blueberry Muffin.jpg" alt="Blueberry Muffin" class="item-image">
+      <div class="item-info">
+        <h3>Blueberry Muffin</h3>
+        <p>Freshly baked every morning with real berries and a golden crust.</p>
+      </div>
+    </div>
+    <div class="item-card">
+      <img src="./image/Cold Brew Special.jpg" alt="Cold Brew Special" class="item-image">
+      <div class="item-info">
+        <h3>Cold Brew Special</h3>
+        <p>Chilled to perfection — your go-to refreshment any time of day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="membership-section">
+  <h2>Join Premier Member</h2>
+  <p>Unlock exclusive perks, special discounts, and members-only events.</p>
+
+  <div class="membership-plans">
+    <div class="plan-card">
+      <h3>Weekly Plan</h3>
+      <p class="price">$5 / week</p>
+      <ul>
+        <li>1 free drink per week</li>
+        <li>10% off all items</li>
+        <li>Priority service</li>
+      </ul>
+      <button>Join Weekly</button>
+    </div>
+
+    <div class="plan-card popular">
+      <h3>Monthly Plan</h3>
+      <p class="price">$18 / month</p>
+      <ul>
+        <li>4 free drinks</li>
+        <li>15% off all items</li>
+        <li>Exclusive monthly events</li>
+      </ul>
+      <button>Join Monthly</button>
+    </div>
+
+    <div class="plan-card">
+      <h3>Yearly Plan</h3>
+      <p class="price">$199 / year</p>
+      <ul>
+        <li>Free drink every week</li>
+        <li>20% off all items</li>
+        <li>VIP invitations & gifts</li>
+      </ul>
+      <button>Join Yearly</button>
+    </div>
+  </div>
+</section>
+
+<!-- Customer Reviews Section -->
+<section class="reviews">
+  <h2>What Our Customers Say</h2>
+  <div class="review-cards">
+    <div class="review-card">
+      <p class="review-text">"Absolutely love this place! The coffee is always perfect and the muffins are to die for."</p>
+      <p class="review-author">— Sarah L.</p>
+    </div>
+    <div class="review-card">
+      <p class="review-text">"My go-to cafe every morning. Friendly staff and cozy vibes. Highly recommend!"</p>
+      <p class="review-author">— James K.</p>
+    </div>
+    <div class="review-card">
+      <p class="review-text">"Tried their cold brew last week and I’m hooked. Great quality and fast service."</p>
+      <p class="review-author">— Amina R.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>Bean Boutique</h3>
+      <p>Your daily dose of caffeine and comfort.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="event.html">Event</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="offer.html">Special Offer</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
+    </div>
+   
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p>Email: info@beanboutique.com</p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Location: 123 Brew St, Coffeeville</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Bean Boutique Cafe. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script src="./JS/index.js"></script>
+</body>
+</html>
